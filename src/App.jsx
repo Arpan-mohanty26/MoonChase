@@ -114,7 +114,7 @@ export default function App() {
 
           >
             <Search size={19} />
-            Search
+            <span className="hidden sm:inline">Search</span>
           </button>
         </div>
         {loading && <p data-aos="fade-in" className="text-center text-gray-300">Ready to get your weather...</p>}
