@@ -100,7 +100,7 @@ export default function App() {
 
         </div>
         {/*Search*/}
-        <div data-aos="zoom-in" className="flex text-center overflow-hidden mb-8 bg-white/30 rounded-lg shadow-md focus-within:ring-2 focus-within:ring-pink-400 transition-all">
+        <div data-aos="zoom-in" className="flex flex-col sm:flex-row text-center overflow-hidden mb-8 bg-white/30 rounded-lg shadow-md focus-within:ring-2 focus-within:ring-pink-400 transition-all">
           <input
             type="text"
             placeholder="Please Enter your city..."
@@ -110,7 +110,7 @@ export default function App() {
           />
           <button
             onClick={handleSearch}
-            className="bg-gradient-to-r from-pink-500 to-purple-500 hover:opacity-90 hover:scale-105 px-4 sm:px-5 py-2 sm:py-3 cursor-pointer flex items-center gap-2 transition-all w-full sm:w-auto"
+            className="bg-gradient-to-r from-pink-500 to-purple-500 hover:opacity-90 hover:scale-105 px-4 sm:px-5 py-2 sm:py-3 cursor-pointer flex items-center gap-2 transition-all "
 
           >
             <Search size={19} />
@@ -127,7 +127,7 @@ export default function App() {
             <p className="text-2xl text-gray-200">{weather.weather[0].description}</p>
             <div className="grid grid-cols-2 gap-4 mt-4 text-sm sm:text-base">
               <div className="bg-white/20 rounded-lg p-3">
-                <Thermometer className="mb-1 text-red-300 animate-pulse" />
+                <Thermometer className="mb-1 text-red-400 animate-pulse" />
                 <p className="font-semibold">Feels Like</p>
                 <p>{Math.round(weather.main.feels_like)}°C</p>
               </div>
@@ -162,7 +162,7 @@ export default function App() {
             {forecast && (
               <div className="mt-8 text-left">
                 <h3 className="text-2xl font-bold mb-4"> Forecast</h3>
-                <div className="grid grid-cols-5 md:grid-cols-5 sm:grid-cols-2 gap-4 text-center w-full ">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center w-full ">
                   {forecast.map((day) => (
                     <div key={day.dt} className="bg-white/20 rounded-lg p-3">
                       <p className="font-semibold mb-1">{new Date(day.dt * 1000).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}</p>
